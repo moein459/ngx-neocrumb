@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "neo-crumb": [
+        "dist/neo-crumb"
+      ],
+      "neo-crumb/*": [
+        "dist/neo-crumb/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
