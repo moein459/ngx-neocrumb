@@ -7,9 +7,9 @@ import {DashboardChildBComponent} from './components/_partials/dashboard-child-b
 
 const routes: Routes = [
 	{
-		path: 'dashboard', component: DashboardComponent, children: [
-			{path: 'child-a', component: DashboardChildAComponent},
-			{path: 'child-b', component: DashboardChildBComponent},
+		path: 'dashboard', component: DashboardComponent, data: {breadcrumb: 'Dashboard'}, children: [
+			{path: 'child-a', component: DashboardChildAComponent, data: {breadcrumb: 'Child A'}},
+			{path: 'child-b', component: DashboardChildBComponent, data: {breadcrumb: 'Child B'}},
 		]
 	}
 ];

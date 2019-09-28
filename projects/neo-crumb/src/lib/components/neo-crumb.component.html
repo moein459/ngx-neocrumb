@@ -1,0 +1,12 @@
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<ng-container *ngFor="let routeLink of routeLinks">
+			<li class="breadcrumb-item" *ngIf="!routeLink.isActive">
+				<a [routerLink]="[routeLink.link]">{{routeLink.breadcrumb}}</a>
+			</li>
+			<li class="breadcrumb-item active" *ngIf="routeLink.isActive">
+				{{routeLink.breadcrumb}}
+			</li>
+		</ng-container>
+	</ol>
+</nav>

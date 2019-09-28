@@ -1,11 +1,15 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import {NeoCrumbComponent} from './neo-crumb.component';
+import {NeoCrumbComponent} from './components/neo-crumb.component';
 import {RouterModule} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 
 @NgModule({
 	declarations: [NeoCrumbComponent],
-	imports: [RouterModule.forChild([])],
+	imports: [
+		CommonModule,
+		RouterModule.forChild([]),
+	],
 	exports: [NeoCrumbComponent]
 })
 export class NeoCrumbModule {
