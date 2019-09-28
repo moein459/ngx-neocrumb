@@ -6,7 +6,7 @@ describe('NeoCrumbService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: NeoCrumbService = TestBed.get(NeoCrumbService);
-    expect(service).toBeTruthy();
+	const service: NeoCrumbService = TestBed.get(NeoCrumbService);
+	expect(service).toBeTruthy();
   });
 });

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NeoCrumbComponent } from './neo-crumb.component';
+import { DashboardChildAComponent } from './dashboard-child-a.component';
 
-describe('NeoCrumbComponent', () => {
-  let component: NeoCrumbComponent;
-  let fixture: ComponentFixture<NeoCrumbComponent>;
+describe('DashboardChildAComponent', () => {
+  let component: DashboardChildAComponent;
+  let fixture: ComponentFixture<DashboardChildAComponent>;
 
   beforeEach(async(() => {
 	TestBed.configureTestingModule({
-		declarations: [ NeoCrumbComponent ]
+		declarations: [ DashboardChildAComponent ]
 	})
 	.compileComponents();
   }));
 
   beforeEach(() => {
-	fixture = TestBed.createComponent(NeoCrumbComponent);
+	fixture = TestBed.createComponent(DashboardChildAComponent);
 	component = fixture.componentInstance;
 	fixture.detectChanges();
   });
