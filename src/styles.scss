@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+//@import "../projects/neo-crumb/src/assets/styles/neo-crumb-bs4.css";
+@import "../projects/neo-crumb/src/assets/styles/neo-crumb-mat.css";
+
+body {
+	font-family: Tahoma, sans-serif;
+	background-color: #eff2f5;
+}

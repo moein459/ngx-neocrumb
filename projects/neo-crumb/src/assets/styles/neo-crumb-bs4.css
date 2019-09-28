@@ -1,0 +1,45 @@
+.neo-breadcrumb {
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding: .75rem 1rem;
+	margin-bottom: 1rem;
+	list-style: none;
+	background-color: #e9ecef;
+	border-radius: .25rem;
+}
+
+.neo-breadcrumb.d-inline-block {
+	display: inline-block;
+}
+
+.neo-breadcrumb::after {
+	content: "";
+	display: inline-block;
+}
+
+.neo-breadcrumb-item {
+	float: left;
+	padding-left: .5rem;
+}
+
+.neo-breadcrumb-item a {
+	color: #007bff;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+.neo-breadcrumb-item a:hover {
+	text-decoration: underline;
+}
+
+.neo-breadcrumb-item.active {
+	color: #6c757d;
+}
+
+.neo-breadcrumb-item + .neo-breadcrumb-item::before {
+	display: inline-block;
+	padding-right: .5rem;
+	color: #6c757d;
+	content: "/";
+}

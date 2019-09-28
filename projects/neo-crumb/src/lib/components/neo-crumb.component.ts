@@ -1,6 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy} from '@angular/core';
 import {ActivatedRouteSnapshot, ActivationEnd, NavigationEnd, NavigationStart, Router} from '@angular/router';
-import {RouteLink} from '../models/route-link.model';
+import {RouteLink} from '../models/neo-crumb.models';
 import {Subscription} from 'rxjs/internal/Subscription';
 import {NeoCrumbService} from '../services/neo-crumb.service';
 
@@ -11,6 +11,9 @@ import {NeoCrumbService} from '../services/neo-crumb.service';
 	styles: []
 })
 export class NeoCrumbComponent implements OnDestroy {
+	@Input()
+	inlineBlock: boolean;
+
 	routeLinks: RouteLink[] = [];
 	subscription = new Subscription();
 
@@ -22,7 +25,7 @@ export class NeoCrumbComponent implements OnDestroy {
 			}
 
 			if (event instanceof ActivationEnd) {
-				this.setBreadcrumb(event.snapshot);
+				this.addBreadcrumb(event.snapshot);
 			}
 
 			if (event instanceof NavigationEnd) {
@@ -31,7 +34,7 @@ export class NeoCrumbComponent implements OnDestroy {
 		});
 	}
 
-	setBreadcrumb(route: ActivatedRouteSnapshot): void {
+	addBreadcrumb(route: ActivatedRouteSnapshot): void {
 		const breadcrumb = route.data.breadcrumb;
 		const link = route.pathFromRoot.map(o => o.url[0]).join('/');
 
