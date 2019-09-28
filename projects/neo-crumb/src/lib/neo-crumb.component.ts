@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'lib-neo-crumb',
-  template: `
-    <p>
-      neo-crumb works!
-    </p>
-  `,
-  styles: []
+	// tslint:disable-next-line:component-selector
+	selector: 'nc-neo-crumb',
+	template: `
+        <p>
+            neo-crumb works!
+        </p>
+	`,
+	styles: []
 })
 export class NeoCrumbComponent implements OnInit {
 
-  constructor() { }
+	constructor() {
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }
