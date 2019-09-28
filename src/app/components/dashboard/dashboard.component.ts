@@ -15,7 +15,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.subscription = this.neoCrumbService.change$.subscribe(value => {
 			value.map(nc => nc.breadcrumb += ' test');
-			this.neoCrumbService.postProcess(value);
 		})
 	}
 

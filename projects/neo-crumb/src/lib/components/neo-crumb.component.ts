@@ -18,7 +18,6 @@ export class NeoCrumbComponent implements OnDestroy {
 	subscription = new Subscription();
 
 	constructor(private router: Router, private neoCrumbService: NeoCrumbService) {
-		this.neoCrumbService.postProcess$.subscribe(value => this.routeLinks = value);
 		this.subscription = this.router.events.subscribe(event => {
 			if (event instanceof NavigationStart) {
 				this.routeLinks = [];

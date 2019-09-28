@@ -55,12 +55,11 @@ const routes: Route[] = {
   }
 };
 ```
-Also for changing values at runtime based on app logic, you can use NeoCrumbService to get current items and PostProcess them using post process function.
+Also for changing values at runtime based on app logic, you can use NeoCrumbService to get current items and PostProcess them.
 ```javascript
 constructor(private neoCrumbService: NeoCrumbService) {
     this.neoCrumbService.change$.subscribe(value => {
         value.map(nc => nc.breadcrumb += ' test');
-        this.neoCrumbService.postProcess(value);
     })
 }
 ```
