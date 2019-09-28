@@ -1,7 +1,7 @@
 {
 	"name": "ngx-neocrumb",
 	"author": "Moein459",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"peerDependencies": {
 		"@angular/common": "^8.2.8",
 		"@angular/core": "^8.2.8"
