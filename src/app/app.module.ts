@@ -16,8 +16,8 @@ import {NeoCrumbModule} from '../../projects/neo-crumb/src/lib/neo-crumb.module'
 	],
 	imports: [
 		BrowserModule,
+	  	NeoCrumbModule,
 		AppRoutingModule,
-	  	NeoCrumbModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

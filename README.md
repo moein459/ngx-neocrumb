@@ -1,27 +1,66 @@
-# NeoCrumbDemo
+# NGX-NeoCrumb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+An Angular module for creating breadcrumbs based on Routes.
 
-## Development server
+## Installation
+```bash
+# install via npm
+$ npm install ngx-neocrumb
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The only thing you need to do is import `NeoCrumbModule` in your `app / shared` module.
 
-## Code scaffolding
+```javascript
+import { McBreadcrumbsModule } from 'ngx-neocrumb';
+@NgModule({
+  imports: [
+    NeoCrumbModule,
+  ],  
+})
+export class AppModule {}
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+And then import one of the styles in `styles.css`
+```javascript
+@import "../projects/neo-crumb/src/assets/styles/neo-crumb-bs4.css";
+@import "../projects/neo-crumb/src/lib/styles/neo-crumb-mat.css";
+```
 
-## Build
+## Usage
+Then you can use breadcrumb component in your template wherever you want it.
+```javascript
+@Component({
+  selector: 'app-root',
+  template: `
+    <div class="container">
+      <nc-neo-crumb [inlineBlock]="true"></nc-neo-crumb>
+      <router-outlet></router-outlet>
+    </div>`
+})
+export class AppComponent {}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Configuration
 
-## Running unit tests
+Configuration of the breadcrumbs module is accessable in your route configuration.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```javascript
+const routes: Route[] = {
+  {
+    path: '',
+    component: HomeComponent,
+    data: {
+      breadcrumb: 'Home'
+    }
+  }
+};
+```
+Also for changing values at runtime based on app logic, you can use NeoCrumbService to get current items and PostProcess them using post process function.
+```javascript
+constructor(private neoCrumbService: NeoCrumbService) {
+    this.neoCrumbService.change$.subscribe(value => {
+        value.map(nc => nc.breadcrumb += ' test');
+        this.neoCrumbService.postProcess(value);
+    })
+}
+```
