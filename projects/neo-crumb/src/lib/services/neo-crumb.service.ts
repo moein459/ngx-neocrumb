@@ -8,7 +8,12 @@ import {Subject} from 'rxjs';
 })
 export class NeoCrumbService {
 	change$ = new BehaviorSubject<RouteLink[]>([]);
+	postProcess$ = new Subject<RouteLink[]>();
 
 	constructor() {
+	}
+
+	postProcess(data: RouteLink[]) {
+		this.postProcess$.next(data);
 	}
 }

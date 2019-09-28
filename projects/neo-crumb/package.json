@@ -1,7 +1,22 @@
 {
 	"name": "ngx-neocrumb",
 	"author": "Moein459",
-	"version": "0.0.1",
+	"version": "0.0.4",
+	"repository": "https://github.com/moein459/ngx-neocrumb",
+	"homepage": "https://github.com/moein459/ngx-neocrumb",
+	"keywords": [
+		"breadcrumb",
+		"angular breadcrumb",
+		"angular",
+		"breadcrumb",
+		"boostrap breadcrumb",
+		"material breadcrumb",
+		"ngx-neocrumb",
+		"ng-neocrumb",
+		"ngx-breadcrumbs",
+		"ng-breadcrumbs",
+		"angular crumbs"
+	],
 	"peerDependencies": {
 		"@angular/common": "^8.2.8",
 		"@angular/core": "^8.2.8"

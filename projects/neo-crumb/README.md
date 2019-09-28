@@ -4,14 +4,13 @@ An Angular module for creating breadcrumbs based on Routes.
 
 ## Installation
 ```bash
-# install via npm
 $ npm install ngx-neocrumb
 ```
 
 The only thing you need to do is import `NeoCrumbModule` in your `app / shared` module.
 
 ```javascript
-import { McBreadcrumbsModule } from 'ngx-neocrumb';
+import { NeoCrumbModule } from 'ngx-neocrumb';
 @NgModule({
   imports: [
     NeoCrumbModule,
@@ -22,8 +21,10 @@ export class AppModule {}
 
 And then import one of the styles in `styles.css`
 ```javascript
-@import "../projects/neo-crumb/src/assets/styles/neo-crumb-bs4.css";
-@import "../projects/neo-crumb/src/lib/styles/neo-crumb-mat.css";
+@import "~ngx-neocrumb/lib/styles/neo-crumb-bs4.css";
+```
+```javascript
+@import "~ngx-neocrumb/lib/styles/neo-crumb-mat.css";
 ```
 
 ## Usage
@@ -60,6 +61,7 @@ Also for changing values at runtime based on app logic, you can use NeoCrumbServ
 constructor(private neoCrumbService: NeoCrumbService) {
     this.neoCrumbService.change$.subscribe(value => {
         value.map(nc => nc.breadcrumb += ' test');
+        this.neoCrumbService.postProcess(value);
     })
 }
 ```
