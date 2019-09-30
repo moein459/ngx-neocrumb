@@ -5,7 +5,6 @@ import {Subscription} from 'rxjs/internal/Subscription';
 import {NeoCrumbService} from '../services/neo-crumb.service';
 
 @Component({
-	// tslint:disable-next-line:component-selector
 	selector: 'nc-neo-crumb',
 	templateUrl: './neo-crumb.component.html',
 	styles: []
@@ -18,6 +17,7 @@ export class NeoCrumbComponent implements OnDestroy {
 	subscription = new Subscription();
 
 	constructor(private router: Router, private neoCrumbService: NeoCrumbService) {
+		this.neoCrumbService.postProcess$.subscribe(value => this.routeLinks = value);
 		this.subscription = this.router.events.subscribe(event => {
 			if (event instanceof NavigationStart) {
 				this.routeLinks = [];
