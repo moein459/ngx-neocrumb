@@ -19,8 +19,8 @@
 }
 
 .neo-breadcrumb-item {
-	float: left;
-	padding-left: .5rem;
+	display: inline;
+	padding: 0 .5rem;
 }
 
 .neo-breadcrumb-item a {

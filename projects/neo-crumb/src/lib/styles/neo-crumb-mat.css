@@ -21,18 +21,15 @@
 }
 
 .neo-breadcrumb-item {
-	float: left;
-	padding-left: .5rem;
-}
-.neo-breadcrumb-item:first-child {
-	padding-left: 0;
+	display: inline;
+	padding: 0 .5rem;
 }
 
 .neo-breadcrumb-item a {
 	color: rgba(0, 0, 0, 0.54);
 	text-decoration: none;
 	background-color: transparent;
-	margin-left: .25em;
+	margin: 0 .25em;
 }
 
 .neo-breadcrumb-item a:hover {
