@@ -27,6 +27,7 @@
 	color: #007bff;
 	text-decoration: none;
 	background-color: transparent;
+	margin-left: .25em;
 }
 
 .neo-breadcrumb-item a:hover {
@@ -35,6 +36,10 @@
 
 .neo-breadcrumb-item.active {
 	color: #6c757d;
+}
+
+.neo-breadcrumb-item i, .neo-breadcrumb-item.active i {
+	margin: 0 .25em;
 }
 
 .neo-breadcrumb-item + .neo-breadcrumb-item::before {

@@ -43,15 +43,21 @@ export class AppComponent {}
 
 ## Configuration
 
-Configuration of the breadcrumbs module is accessable in your route configuration.
+Configuration of the breadcrumbs module is accessible in your route configuration.
 
 ```javascript
 const routes: Route[] = {
   {
     path: '',
-    component: HomeComponent,
+    component: DashboardComponent,
     data: {
-      breadcrumb: 'Home'
+      breadcrumb: {
+        text: 'Dashboard',
+
+        // Unnecessary fields: 
+        iconClass: 'mdi mdi-view-dashboard',
+        hide: false
+      }
     }
   }
 };
@@ -59,9 +65,12 @@ const routes: Route[] = {
 Also for changing values at runtime based on app logic, you can use NeoCrumbService to get current items and PostProcess them.
 ```javascript
 constructor(private neoCrumbService: NeoCrumbService) {
-    this.neoCrumbService.change$.subscribe(value => {
-        value.forEach(nc => nc.breadcrumb += ' test');
-    })
+    this.neoCrumbService.onChange.subscribe(value => {
+        value.forEach(nc => {
+            if (nc.text == 'Dash')
+                nc.text = 'Dashboard';
+        });
+    });
     
     // this.neoCrumbService.postProcess([]);
 }

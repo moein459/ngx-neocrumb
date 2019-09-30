@@ -32,6 +32,7 @@
 	color: rgba(0, 0, 0, 0.54);
 	text-decoration: none;
 	background-color: transparent;
+	margin-left: .25em;
 }
 
 .neo-breadcrumb-item a:hover {
@@ -42,7 +43,11 @@
 	color: rgba(0, 0, 0, 0.87);
 }
 
-.neo-breadcrumb-item+.neo-breadcrumb-item::before {
+.neo-breadcrumb-item i, .neo-breadcrumb-item.active i {
+	margin: 0 .25em;
+}
+
+.neo-breadcrumb-item + .neo-breadcrumb-item::before {
 	display: inline-block;
 	color: #6c757d;
 	content: "/";

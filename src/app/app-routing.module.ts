@@ -7,9 +7,16 @@ import {DashboardChildBComponent} from './components/_partials/dashboard-child-b
 
 const routes: Routes = [
 	{
-		path: 'dashboard', component: DashboardComponent, data: {breadcrumb: 'Dashboard'}, children: [
-			{path: 'child-a', component: DashboardChildAComponent, data: {breadcrumb: 'Child A'}},
-			{path: 'child-b', component: DashboardChildBComponent, data: {breadcrumb: 'Child B'}},
+		path: 'dashboard', component: DashboardComponent, data: {
+			breadcrumb:
+				{
+					text: 'Dash',
+					iconClass: 'mdi mdi-view-dashboard'
+				}
+		}
+		, children: [
+			{path: 'child-a', component: DashboardChildAComponent, data: {breadcrumb: {text: 'Child A', iconClass: 'mdi mdi-account'}}},
+			{path: 'child-b', component: DashboardChildBComponent, data: {breadcrumb: {text: 'Child B', hide: true}}},
 		]
 	}
 ];

@@ -1,5 +1,6 @@
 export interface RouteLink {
-	breadcrumb: string;
+	text: string;
 	link: string;
-	isActive: boolean;
+	iconClass?: string;
+	hide?: boolean;
 }

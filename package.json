@@ -20,10 +20,11 @@
     "@angular/platform-browser-dynamic": "~8.2.7",
     "@angular/router": "~8.2.7",
     "ng-packagr": "^5.5.1",
-    "ngx-neocrumb": "^0.0.4",
+    "ngx-neocrumb": "^0.0.5",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "@mdi/font": "~4.4.95"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.5",

@@ -14,11 +14,11 @@ export class NeoCrumbComponent implements OnDestroy {
 	inlineBlock: boolean;
 
 	routeLinks: RouteLink[] = [];
-	subscription = new Subscription();
+	subscriptions = new Subscription();
 
 	constructor(private router: Router, private neoCrumbService: NeoCrumbService) {
-		this.neoCrumbService.postProcess$.subscribe(value => this.routeLinks = value);
-		this.subscription = this.router.events.subscribe(event => {
+		const postProcessSubscription = this.neoCrumbService.onPostProcess.subscribe(value => this.routeLinks = value);
+		const routerEventsSubscription = this.router.events.subscribe(event => {
 			if (event instanceof NavigationStart) {
 				this.routeLinks = [];
 			}
@@ -28,17 +28,21 @@ export class NeoCrumbComponent implements OnDestroy {
 			}
 
 			if (event instanceof NavigationEnd) {
-				this.neoCrumbService.change$.next(this.routeLinks);
+				this.neoCrumbService.change(this.routeLinks);
 			}
 		});
+
+		this.subscriptions.add(postProcessSubscription);
+		this.subscriptions.add(routerEventsSubscription);
 	}
 
 	addBreadcrumb(route: ActivatedRouteSnapshot): void {
-		const breadcrumb = route.data.breadcrumb;
-		const link = route.pathFromRoot.map(o => o.url[0]).join('/');
+		const breadcrumb = route.data.breadcrumb as RouteLink;
+		breadcrumb.link = route.pathFromRoot.map(o => o.url[0]).join('/');
 
-		if (breadcrumb)
-			this.routeLinks.splice(0, 0, {breadcrumb, link, isActive: this.isActive(link)});
+		if (breadcrumb) {
+			this.routeLinks.splice(0, 0, breadcrumb);
+		}
 	}
 
 	isActive(url: string): boolean {
@@ -46,6 +50,6 @@ export class NeoCrumbComponent implements OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		this.subscription.unsubscribe();
+		this.subscriptions.unsubscribe();
 	}
 }
