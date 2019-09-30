@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
-import {NeoCrumbService} from '../../../../projects/neo-crumb/src/lib/services/neo-crumb.service';
+import {NeoCrumbService} from 'ngx-neocrumb';
 
 @Component({
 	selector: 'nc-demo-dashboard',

@@ -2,6 +2,10 @@
 
 An Angular module for creating breadcrumbs based on Routes.
 
+[Demo](https://angular-jmthr4.stackblitz.io)
+
+[StackBlitz Example](https://stackblitz.com/edit/angular-jmthr4)
+
 ## Installation
 ```bash
 $ npm install ngx-neocrumb
@@ -43,7 +47,7 @@ export class AppComponent {}
 
 ## Configuration
 
-Configuration of the breadcrumbs module is accessible in your route configuration.
+Configuration of the breadcrumbs module is accessable in your route configuration.
 
 ```javascript
 const routes: Route[] = {
