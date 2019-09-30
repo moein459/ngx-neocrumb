@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {DashboardChildAComponent} from './components/_partials/dashboard-child-a/dashboard-child-a.component';
 import {DashboardChildBComponent} from './components/_partials/dashboard-child-b/dashboard-child-b.component';
-import {NeoCrumbModule} from 'ngx-neocrumb';
+import {NeoCrumbModule} from '../../projects/neo-crumb/src/lib/neo-crumb.module';
 
 @NgModule({
 	declarations: [
