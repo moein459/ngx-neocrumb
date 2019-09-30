@@ -1,11 +1,13 @@
-<nav aria-label="breadcrumb" *ngIf="!routeLinks[routeLinks.length -1].hide">
+<nav aria-label="breadcrumb" *ngIf="routeLinks && routeLinks.length && !routeLinks[routeLinks.length -1].hide">
 	<ol class="neo-breadcrumb" [class.d-inline-block]="inlineBlock">
-		<ng-container *ngFor="let routeLink of routeLinks">
-			<li class="neo-breadcrumb-item" *ngIf="!isActive(routeLink.link)">
-				<i *ngIf="routeLink.iconClass" [classList]="routeLink.iconClass"></i>
-				<a [routerLink]="[routeLink.link]">{{routeLink.text}}</a>
+		<ng-container *ngFor="let routeLink of routeLinks; let i = index">
+			<li class="neo-breadcrumb-item" *ngIf="!isActive(i)">
+				<a [routerLink]="[routeLink.link]">
+					<i *ngIf="routeLink.iconClass" [classList]="routeLink.iconClass"></i>
+					{{routeLink.text}}
+				</a>
 			</li>
-			<li class="neo-breadcrumb-item active" *ngIf="isActive(routeLink.link)">
+			<li class="neo-breadcrumb-item active" *ngIf="isActive(i)">
 				<i *ngIf="routeLink.iconClass" [classList]="routeLink.iconClass"></i>
 				{{routeLink.text}}
 			</li>
