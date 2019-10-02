@@ -27,7 +27,7 @@ And then import one of the styles in `styles.scss`
 ```scss
 @import "~ngx-neocrumb/lib/styles/neo-crumb-bs4.css";
 ```
-```scss
+```javascript
 @import "~ngx-neocrumb/lib/styles/neo-crumb-mat.css";
 ```
 ```scss
