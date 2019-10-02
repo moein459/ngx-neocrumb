@@ -24,11 +24,14 @@ export class AppModule {}
 ```
 
 And then import one of the styles in `styles.css`
-```javascript
+```scss
 @import "~ngx-neocrumb/lib/styles/neo-crumb-bs4.css";
 ```
-```javascript
+```scss
 @import "~ngx-neocrumb/lib/styles/neo-crumb-mat.css";
+```
+```scss
+@import "~ngx-neocrumb/lib/styles/neo-crumb-min.css";
 ```
 
 ## Usage

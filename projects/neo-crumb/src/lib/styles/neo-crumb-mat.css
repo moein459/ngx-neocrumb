@@ -2,7 +2,7 @@
 	display: flex;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	padding: 8px 16px;
+	padding: 8px 0;
 	margin-bottom: 1rem;
 	list-style: none;
 	border-radius: 4px;

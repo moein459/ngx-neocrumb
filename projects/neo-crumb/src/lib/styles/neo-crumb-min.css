@@ -1,0 +1,47 @@
+.neo-breadcrumb {
+	background-color: white;
+	padding: 4px 8px;
+	border-radius: 5px;
+	box-shadow: 0 3px 5px 1px rgba(0, 0, 0, .025);
+}
+
+.neo-breadcrumb.d-inline-block{
+	display: inline-block;
+}
+
+.neo-breadcrumb::after {
+	content: "";
+	display: inline-block;
+}
+
+.neo-breadcrumb-item {
+	display: inline;
+	padding: 0 .1rem;
+	padding-top: 2px;
+	font-size: .75rem;
+}
+
+.neo-breadcrumb-item a {
+	color: black;
+	text-decoration: none;
+}
+
+.neo-breadcrumb-item.active {
+	color: #6c757d;
+}
+
+.neo-breadcrumb-item i, .neo-breadcrumb-item.active i {
+	margin: 0 .25em;
+}
+
+.neo-breadcrumb-item + .neo-breadcrumb-item::before {
+	display: inline-block;
+	content: "";
+	width: 4px;
+	height: 4px;
+	position: relative;
+	background-color: black;
+	border-radius: 100%;
+	top: -2px;
+	margin-right: 2px;
+}
