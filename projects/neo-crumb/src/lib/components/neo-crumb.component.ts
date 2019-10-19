@@ -31,6 +31,7 @@ export class NeoCrumbComponent implements OnInit, OnDestroy {
 			.pipe(filter(event => event instanceof NavigationEnd))
 			.subscribe(() => this.routeLinks = this.createBreadcrumbs(this.activatedRoute.root));
 
+
 		this.subscriptions.add(routerEventsSubscription);
 		this.subscriptions.add(postProcessSubscription);
 	}
@@ -51,15 +52,16 @@ export class NeoCrumbComponent implements OnInit, OnDestroy {
 				url += `/${routeURL}`;
 			}
 
-			if (!isNullOrUndefined(breadcrumb) && routeURL !== '')
+			if (!isNullOrUndefined(breadcrumb) && !(routeURL === '' && child.children.length < 1))
 				breadcrumbs.push({text: breadcrumb.text, link: url, iconClass: breadcrumb.iconClass, hide: breadcrumb.hide});
+
 
 			return this.createBreadcrumbs(child, url, breadcrumbs);
 		}
 	}
 
 	getRouteUrl(segment: UrlSegment[]): string {
-		return segment.map(segment => segment.path).join('/');
+		return segment.map(seg => seg.path).join('/');
 	}
 
 	isActive(index: number): boolean {

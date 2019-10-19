@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
-import {NeoCrumbService} from 'ngx-neocrumb';
+import {NeoCrumbService} from '../../../../projects/neo-crumb/src/lib/services/neo-crumb.service';
 
 @Component({
 	selector: 'nc-demo-dashboard',
@@ -16,8 +16,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.subscription = this.neoCrumbService.onChange.subscribe(value => {
 			value.forEach(nc => {
-				if (nc.text == 'Dash')
+				if (nc.text == 'Dash') {
 					nc.text = 'Dashboard';
+				}
 			});
 		});
 

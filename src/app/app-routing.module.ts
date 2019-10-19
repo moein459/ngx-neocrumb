@@ -8,7 +8,7 @@ import {DashboardChildEmptyComponent} from './components/_partials/dashboard-chi
 
 const routes: Routes = [
 	{
-		path: 'dashboard', component: DashboardComponent, data: {
+		path: '', component: DashboardComponent, data: {
 			breadcrumb:
 				{
 					text: 'Dash',
